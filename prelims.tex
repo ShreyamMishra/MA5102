@@ -1,0 +1,49 @@
+\section{Preliminaries}
+\label{s:prelims}
+\subsection{The Orthogonal Matrices as a \emph{Group}}
+\begin{theorem}
+$O(n)$ forms a group under the operation of matrix multiplication.
+\end{theorem}
+\emph{Proof}: Consider $Q, P \in O(n)$. Then,
+\[
+QP(QP)^{t} = QPP^{t}Q^{t} = \I_n \quad \text{(closure under multiplication),}
+\]
+\[
+Q\I_n = Q = \I_n Q \quad \text{($\I_n$ is the identity element),}
+\]
+\[
+QQ^{t} = \I_n \quad \text{($Q^{t}$ forms the inverse).}
+\]
+We notice that $O(n)$ forms a subgroup of $GL_n(\R)$. \\
+\emph{Remark.} For all $Q \in O(n)$, we have that $\mathrm{det}(Q) = \pm 1.$ \emph{Proof}: $\mathrm{det}(\I_n) = 1 = \mathrm{det}(QQ^{t}) = \bigl(\mathrm{det}(Q)\bigr)^{2} \implies \mathrm{det}(Q) = \pm 1.$
+
+\begin{theorem}
+$SO(n)$ forms a normal subgroup of $O(n)$.
+\end{theorem}
+\emph{Proof}: Consider $Q \in O(n)$ and $P \in SO(n)$. Then, $QPQ^{-1} \in O(n)$ since $Q, P, Q^{-1} \in O(n)$ and $O(n)$ is closed under multiplication. Moreover,
+\[
+\mathrm{det}(QPQ^{-1}) = \mathrm{det}(Q)\mathrm{det}(P)\mathrm{det}(Q^{-1}) = \mathrm{det}(P) = 1.
+\] 
+Thus, $QPQ^{-1} \in SO(n)$ $\forall$ $Q \in O(n) \implies SO(n) \lhd O(n) \preccurlyeq GL_n(\R)$.
+
+\subsection{The Orthogonal Group with a \emph{Topology}}
+We can use the Euclidean metric on $\R[n^2]$ to assign a metric to  $M_n(\R)$.
+\begin{theorem}
+Let $A, B \in M_n(\R)$. Then,
+\[
+d: M_n(\R) \mapsto M_n(\R); \quad d(A, B) \Let \sqrt{\sum_{1\leq i, j \leq n}\bigl(A_{ij} - B_{ij}\bigr)^{2}},
+\]
+is a metric on $M_n(\R)$.
+\end{theorem}
+\emph{Proof}: We check the 3 properties a metric $d$ must follow: \\
+$d(A, B) = 0 \implies A_{ij} = B_{ij}$ $\forall$ $1 \leq i, j \leq n \implies A = B$.
+
+$d(A, B) = \sqrt{\sum_{1\leq i, j \leq n}\bigl(A_{ij} - B_{ij}\bigr)^{2}} = d(B, A)$.
+
+\[
+d(A, B) = \sqrt{\sum_{1\leq i, j \leq n}\bigl(A_{ij} - B_{ij}\bigr)^{2}} = \sqrt{\sum_{1\leq i, j \leq n}\bigl(A_{ij} - C_{ij} + C_{ij} B_{ij}\bigr)^{2}}  
+\]
+\[
+\leq \sqrt{\sum_{1\leq i, j \leq n}\bigl(A_{ij} - C_{ij}\bigr)^{2}} + \sqrt{\sum_{1\leq i, j \leq n}\bigl(C_{ij} - B_{ij}\bigr)^{2}} = d(A,C) + d(C,B) 
+\]
+Hence $d$ defined as above forms a metric on $M_n(\R)$. It is important to note that we have induced the notion of a metric by viewing the entries of $M_n(\R)$ in the Euclidean space $\R[n^2]$ and using the standard Euclidean metric.

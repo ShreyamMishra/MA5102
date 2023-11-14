@@ -1,0 +1,58 @@
+\section{The Orthogonal Group as a Topological Group}
+\label{s:results}
+\subsection{Topological Group}
+\begin{theorem}
+ The matrix group $O(n)$ is a topological group.
+\end{theorem}
+\emph{Proof}: To prove this, we must show that matrix multiplication and inverses are both continuous operations on $M_n(\R)$. However, we note that matrix multiplication can be expressed as a polynomial in the entries. Since polynomials are continuous functions, we get that multiplication of matrices is element-wise continuous and thus continuous on the whole matrix. The inverse of a matrix $A \in M_n(\R)$ is given by $A^{-1} \Let \frac{\mathrm{adj}(A)}{\mathrm{det}(A)}$. Since the adjoint and determinant are both polynomials on the entries of $A$, they are continuous functions (and the determinant is non-zero for invertible matrices). Hence, we get that the inverse is also a continuous map.
+
+\subsection{Compactness of O(n)}
+\begin{lemma}
+$O(n)$ is a closed subset of $\R[n^2]$.
+\end{lemma}
+\emph{Proof}: Consider $f: M_n(\R) \mapsto M_n(\R)$ defined as $f(Q) = QQ^{t}$. Then $\bigl(f(Q)\bigr)_{ij} = \sum_{k=1}^{n}Q_{ik}Q_{jk}$ which is a polynomial in the entries of $Q$ and polynomials are continuous functions. Since $f$ is element wise continuous, we conclude $f$ is a continuous map on $M_n(\R)$. Now, $O(n) = f^{-1}(\{\I_n\})$ which is the inverse of a closed set. Hence, $O(n)$ is closed.
+\begin{lemma}
+$O(n)$ is a closed subset of $\R[n^2]$.
+\end{lemma}
+\emph{Proof}: $O(n) \subseteq \{A \in M_n(\R) \suchthat \sum_{i=1}^{n} A_{ij}^{2} = 1\}$ $\forall$ $1 \leq j \leq n$. Clearly this set is bounded by the open ball given by $d(A, 0) = \sum_{1 \leq i,j \leq n}A_{ij}^{2} = n^2$ where $0$ is the zero matrix with all entries 0.
+
+\begin{theorem}
+$O(n)$ is compact.
+\end{theorem}
+\emph{Proof}: As an application of the Heine-Borel theorem, since $O(n)$ is a closed and bounded subset
+of Euclidean $\R[n^2]$, we have that O(n) is compact.
+
+\subsection{Path-Connectedness}
+\begin{theorem}
+$O(n)$ is disconnected.
+\end{theorem}
+\emph{Proof}: Note that the function $\mathrm{det}: M_n(\R) \mapsto \R$ is a continuous function. Now, $\mathrm{det}: O(n) \mapsto \{-1, 1\} \subset \R$. Since continuous functions map connected sets to connected sets, we have that $O(n)$ is disconnected.
+\begin{theorem}
+$SO(n)$ is path-connected.
+\end{theorem}
+\emph{Proof}: We begin by inspecting the simple case of $SO(2)$ and build our way upwards. Any generic matrix $P \in SO(2)$ is given by $P = \begin{pmatrix}
+\cos(\theta) & -\sin(\theta) \\
+\sin(\theta) & \cos(\theta)
+\end{pmatrix}$. To show $SO(2)$ is path-connected, it is sufficient to show there exists a path between any arbitrary element in $SO(2)$ and the identity matrix. Consider the function $\gamma: [0,1] \mapsto SO(2)$ defined as
+$$\gamma(t) = \begin{pmatrix}
+\cos(t\theta) & -\sin(t\theta) \\
+\sin(t\theta) & \cos(t\theta)
+\end{pmatrix}.$$
+Then observe that $\forall$ $t \in [0,1]$, $\gamma(t) \in SO(2)$ and $\gamma(0) = \I_2$ while $\gamma(1) = P$. Thus, we have shown $SO(2)$ is path-connected. Similarly, to show $SO(3)$ is path connected, consider $P \in SO(3).$ Since $SO(3) \lhd O(3) \implies \exists$ $Q \in O(3)$ and $P'_{\theta} = \begin{pmatrix}
+1 & 0 & 0 \\
+0 & \cos(\theta) & -\sin(\theta) \\
+0 & \sin(\theta) & \cos(\theta)
+\end{pmatrix} \in SO(3)$ such that, 
+$$P = QP'Q^{-1} = QP'_{\theta}Q^{t}.$$ Thus, consider the path $\gamma(t) = QP'_{t\theta}Q^{t}$. Then, $\gamma(0) = \I_3$ and $\gamma(1) = P$. Thus, we have shown $SO(3)$ is path connected. More generally, for any $P \in SO(n)$, there exists $Q \in O(n)$ and $P'_{\theta} \in SO(n)$ given by $P'_{\theta} = \begin{pmatrix}
+R_{\theta_1} \\
+& R_{\theta_2} \\
+& & R_{\theta_3} \\
+& & & \ddots \\ 
+& & & & R_{\theta_m}\\ 
+\end{pmatrix}$ such that $P = QP'Q^{t}$. Every $R_{\theta_k}$ is either a $2\times 2$ rotation matrix or equal to $[1]$. Then the path connecting $P$ to $\I_n$ is given by $\gamma(t) = QP'_{t\theta}Q^{t}$ where 
+ $\gamma(0) = \I_n$ and $\gamma(1) = P$. Thus we have shown that $SO(n)$ is path connected. 
+\begin{theorem}
+$O(n)\setminus SO(n)$ is path-connected.
+\end{theorem}
+\emph{Proof}: We will show there exists a path between any two elements $X, Y \in O(n)\setminus SO(n)$. Consider $Q \in O(n)\setminus SO(n)$. Then, $QX, QY \in SO(n)$ since $QX, QY \in O(n)$ $\bigl(O(n)$ is closed under multiplication$\bigr)$. Moreover $\mathrm{det}(QX) = \mathrm{det}(Q)\mathrm{det}(X) = -1\times-1 = 1 = \mathrm{det}(QY) \implies QX, QY \in SO(n)$. Using the above result, we know $SO(n)$ is path-connected implying there exists a path connecting $QX$ and $QY$ called $\gamma(t)$ such that $\gamma(0) = QX$ and $\gamma(1) = QY$. Then the path $\phi(t) = Q^{-1}\gamma(t)$ is a well defined continuous function since matrix multiplication is continuous (according to Theorem 3.1). Clearly $\phi(0) = Q^{-1}\gamma(0) = Q^{-1}QX = X$ and similarly $\phi(1) = Y$. Thus we have shown there exists between any two elements $X, Y \in O(n) \setminus SO(n)$ which implies it is a connected set. \\
+\emph{\textbf{Remark}}: It follows that $O(n)$ has exactly two path components. 

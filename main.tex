@@ -1,0 +1,101 @@
+
+\documentclass[a4paper,12pt]{article} % 
+\usepackage[top = 2.5cm, bottom = 2.5cm, left = 2.5cm, right = 2.5cm]{geometry} 
+\usepackage{defs}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx} 
+\usepackage{mathtools}
+\usepackage{tikz,lipsum,lmodern}
+\usepackage[most]{tcolorbox}
+\usepackage{setspace}
+\setlength{\parindent}{0in}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+% Installing necessary math packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{latexsym}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 3. Header (and Footer)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% To make our document nice we want a header and number the pages in the footer.
+
+\pagestyle{fancy} 
+\fancyhf{}
+
+\lhead{Assignment}% \lhead puts text in the top left corner. \footnotesize sets our font to a smaller size.
+
+%\rhead works just like \lhead (you can also use \chead)
+\rhead{Shreyam Mishra, 19D110020} %<---- Fill in your details.
+% Similar commands work for the footer (\lfoot, \cfoot and \rfoot).
+% We want to put our page number in the center.
+\rfoot{Page \thepage \hspace{1pt} of \pageref{LastPage}}
+\cfoot{\footnotesize \thepage} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 4. Your document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Now, you need to tell LaTeX where your document starts. We do this with the \begin{document} command.
+% Like brackets every \begin{} command needs a corresponding \end{} command. We come back to this later.
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title section of the document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% For the title section we want to reproduce the title section of the Problem Set and add your names.
+
+\thispagestyle{empty} % This command disables the header on the first page. 
+
+
+\begin{center} % Everything within the center environment is centered.
+	{\Large \bf MA 5102 - Algebraic Topology}
+	\vspace{2mm} % to add some vertical space in between the lines
+	
+	\bf{Assignment} % <---- Don't forget to put in the right number
+	
+	\vspace{2mm}
+	
+        % YOUR NAMES GO HERE
+	{\bf Shreyam Mishra, 19D110020} % <---- Fill in your name and ID number here.
+		
+\end{center}  
+
+\vspace*{0.3cm} 
+
+\begin{center}
+    \textbf{\large{Topological Properties of the Orthogonal Group}}
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Up until this point you only have to make minor changes for every assignment (Number of the assignment). Your write up essentially starts here.
+
+%\textbf{Question 2:} \emph{Prove an analogue of Theorem 1.8 for $n$ functions}. \\
+%\textbf{Solution:} LSwT
+%
+%Analogue of Theorem 1.8 is stated as follows: 
+%\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+%  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+%  title=Theorem 1.8's Analogue,fonttitle=\bfseries,
+%  boxed title style={size=small,colframe=red!50!black} ]
+%Let $u_1, u_2, \hdots , u_n$  be real measurable functions on a measurable space $X$, let $f$ be a continuous mapping of $\mathbb{R}^{n}$ into a topological space $Y$, and define:
+%\begin{equation*}
+%    h(x) = f(u_1(x), u_2(x), \hdots , u_n(x))
+%\end{equation*}
+%for $x \in X$. Then $h: X \rightarrow Y$ is measurable.
+%\end{tcolorbox}
+\input{notation}
+\input{prelims}
+\input{results}
+\input{deformation_retract}
+\end{document}

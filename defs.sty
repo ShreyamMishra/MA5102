@@ -1,0 +1,43 @@
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{mathtools}
+\allowdisplaybreaks
+\usepackage[usenames, dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subcaption}
+\captionsetup[subfigure]{labelformat=parens, font=scriptsize, labelfont=rm}
+\usepackage[inline]{enumitem}
+\setlist{nosep}
+
+\usepackage[colorlinks=true,
+		raiselinks=true,
+		linkcolor=Sepia,%Mahogany,Brown
+		citecolor=PineGreen,%Blue
+		urlcolor=NavyBlue,
+		pdfauthor={},
+		pdftitle={},
+		pdfkeywords={},
+		pdfsubject={},
+		plainpages=false]{hyperref}
+\usepackage[T1]{fontenc}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+\DeclarePairedDelimiterX\aset[1]\lbrace\rbrace{\def\suchthat{\; \delimsize\vert\;}#1}
+
+\newcommand{\Let}{\coloneqq}
+%\newcommand{\Let}{\mathrel{\mathop:}=}
+\newcommand{\R}[1][]{\ensuremath{\mathbb{R}^{#1}}}
+\newcommand{\I}[1][]{\ensuremath{\mathbb{I}^{#1}}}
+\newcommand{\bigc}[1]{\bigl{#1\bigr}}
+\newcommand{\suchthat}{\mid}
+\newcommand{\innerprod}[1]{\langle #1 \rangle}
+\newcommand{\norm}[1]{\ensuremath{{\left\lVert #1 \right\rVert}}}
+\renewcommand{\mapsto}{\rightarrow}
+%\newcommand{\cos}{\mathrm{cos}}
+%\newcommand{\sin}{\mathrm{sin}}
