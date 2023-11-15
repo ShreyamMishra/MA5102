@@ -36,4 +36,10 @@ This is well-defined since $GS(A,t)$ and $N(A,t)$ agree at $t=\frac{1}{2}$.
 \begin{theorem}
 The $GSO$ as defined above is a strong deformation retraction of $GL_n(\R)$ into $O(n)$.
 \end{theorem}
-\emph{Proof}: Observe that $GSO(A,0) = A \in GL_n(\R).$ Next, $GSO(A,1)$ is a matrix with ortho-normal columns implying $GSO(A,1) \in O(n)$. Thus, $$
+\emph{Proof}: Observe that $GSO(A,0) = A \in GL_n(\R).$ Next, $GSO(A,1)$ is a matrix with ortho-normal columns implying $GSO(A,1) \in O(n)$. Further, any element $A \in O(n)$ remains fixed since $\innerprod{u_k, v_i} = 0$ for all $1 \leq i \neq k \leq n$ and therefore, for all $t \in [0,\frac{1}{2}]$, we have $GS(A, t)=A$. For such a matrix,$N(A, t)=A$ for $t \in [\frac{1}{2},1]$ (As $\norm{v_i} = 1$ for all $1 \leq i \leq n)$. Thus, this is a strong deformation retraction. For the simple case of $n=1$, this deformation retraction can be visualized as given in Figure~\ref{fig:deform-retract}.
+\begin{figure}[t]
+  \centering
+\includegraphics[width=10cm]{RealLine-deformation-retract.png}
+\caption{Deformation retraction of $GL_1(\R)$ $\bigl((-\infty, 0)\cup (0, \infty)\bigr)$ to $O(1)$ $\bigl(\{-1, 1\}\bigr)$}
+  \label{fig:deform-retract}
+\end{figure}
